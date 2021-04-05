@@ -71,10 +71,10 @@ std::string Weather::GetTomorrowDiff(const std::string &city) {
     response = "much warmer";
   } else if (diff > 0.5) {
     response = "warmer";
-  } else if (diff < -0.5) {
-    response = "colder";
   } else if (diff < -3) {
     response = "much colder";
+  } else if (diff < -0.5) {
+    response = "colder";
   } else {
     response = "the same";
   }

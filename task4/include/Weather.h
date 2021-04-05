@@ -11,8 +11,8 @@ using json = nlohmann::json;
 class Weather {
  public:
   json GetResponseForCity(const std::string& city, const cpr::Url& url);
-  float GetTemperature(const std::string& city);
-  float GetTomorrowTemperature(const std::string& city);
+  virtual float GetTemperature(const std::string& city);
+  virtual float GetTomorrowTemperature(const std::string& city);
 
   float FindDiffBetweenTwoCities(const std::string& city1, const std::string& city2);
 
