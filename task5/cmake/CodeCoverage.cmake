@@ -73,9 +73,9 @@ FIND_PROGRAM( GCOV_PATH gcov)
 #FIND_PROGRAM( GENHTML_PATH genhtml )
 FIND_PROGRAM( GCOVR_PATH gcovr PATHS ${CMAKE_SOURCE_DIR}/PythonEnvironment/bin)
 
-IF(NOT GCOV_PATH)
-    MESSAGE(FATAL_ERROR "gcov not found! Aborting...")
-ENDIF() # NOT GCOV_PATH
+#IF(NOT GCOV_PATH)
+#    MESSAGE(FATAL_ERROR "gcov not found! Aborting...")
+#ENDIF() # NOT GCOV_PATH
 
 IF("${CMAKE_CXX_COMPILER_ID}" MATCHES "(Apple)?[Cc]lang")
     IF("${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 3)
@@ -173,13 +173,10 @@ FUNCTION(SETUP_TARGET_FOR_COVERAGE_GCOVR _targetname _sourcedir _testrunner _out
 # Param _targetname     The name of new the custom make target
 # Param _testrunner     The name of the target which runs the tests
 # Param _outputname     cobertura output is generated as _outputname.xml
-    IF (NOT PYTHON_EXECUTABLE)
-        MESSAGE(FATAL_ERROR "Python not found! Aborting...")
-    ENDIF()
 
-	#IF (NOT GCOVR_PATH)
-	#    MESSAGE(FATAL_ERROR "gcovr not found! Aborting...")
-	#ENDIF()
+#IF (NOT GCOVR_PATH)
+#	    MESSAGE(FATAL_ERROR "gcovr not found! Aborting.... Please install deps earlier")
+#	ENDIF()
 
 	get_filename_component(REAL_SOURCE_DIR ${CMAKE_SOURCE_DIR} REALPATH)
 	get_filename_component(REAL_BINARY_DIR ${CMAKE_BINARY_DIR} REALPATH)

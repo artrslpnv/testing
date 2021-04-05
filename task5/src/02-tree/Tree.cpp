@@ -35,6 +35,20 @@ FileNode GetTree(const std::string& path, bool dirs_only) {
   return answer;
 }
 
+
+void FilterEmptyNodes(const FileNode& node, const path& current_path=".") {
+    if (!node.is_dir) {
+        return;
+    }
+
+    if (node.children.empty()) {
+        boost::filesystem::remove(current_path);
+    }
+    for (auto& child: node.children) {
+        FilterEmptyNodes(child, current_path / child.name); 
+    }
+}
+
 bool operator == (const FileNode& f1, const FileNode& f2) {
   return f1.name == f2.name && f1.is_dir == f2.is_dir && f1.children == f2.children;
 }

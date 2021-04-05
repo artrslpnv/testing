@@ -2,6 +2,8 @@
 
 #include <vector>
 #include <string>
+#include <boost/filesystem.hpp>
+using boost::filesystem::path;
 
 struct FileNode {
   std::string name;
@@ -10,5 +12,7 @@ struct FileNode {
 };
 
 FileNode GetTree(const std::string& path, bool dirs_only);
+
+void FilterEmptyNodes(const FileNode& node, const path& current_path);
 
 bool operator == (const FileNode& f1, const FileNode& f2);

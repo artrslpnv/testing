@@ -3,7 +3,6 @@ project(Testing CXX)
 
 include(ExternalProject)
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH}" ${CMAKE_SOURCE_DIR}/cmake)
-include(CodeCoverage)
 
 set(EXTERNAL_INSTALL_LOCATION ${Testing_SOURCE_DIR}/3rdparty)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
@@ -53,23 +52,13 @@ include_directories(${CPR_INCLUDE_DIRS})
 message("Boost libraries are located at ${Boost_LIBRARY_DIRS}")
 message("Boost libraries are ${Boost_LIBRARIES}")
 
-find_package(PythonInterp 3 REQUIRED)
 
-set(PYTHON_EXECUTABLE "python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}")
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
 
-message(${PYTHON_EXECUTABLE})
+execute_process(COMMAND ${Testing_SOURCE_DIR}/install_deps.sh ${Python3_EXECUTABLE})
 
-add_custom_target(
-    InstallDeps
-    COMMAND ${Testing_SOURCE_DIR}/install_deps.sh ${PYTHON_EXECUTABLE}
-    DEPENDS install_deps.sh
-    WORKING_DIRECTORY ${Testing_SOURCE_DIR}
-    COMMENT "Installing dependencies"
-)
-
+include(CodeCoverage)
 add_custom_target(coverage_report)
-
-add_dependencies(coverage_report InstallDeps)
 
 function(run_coverage test_sources sources coverage_target target_name coverage_name)
     message(INFO test sources ${test_sources})
@@ -86,7 +75,7 @@ function(run_coverage test_sources sources coverage_target target_name coverage_
     setup_target_for_coverage_gcovr(
             ${coverage_target} ${target_name} ${test_name} ${coverage_name}
     )
-    add_dependencies(${test_name} googletest_repo InstallDeps cpr_repo)
+    add_dependencies(${test_name} googletest_repo cpr_repo)
 
     add_dependencies(coverage_report ${coverage_target})
 endfunction()
