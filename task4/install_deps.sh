@@ -10,10 +10,14 @@ then
     sudo ${python_exe} /tmp/get-pip.py
 fi
 echo $error_code
-${python_exe} -m pip install --user --upgrade pip
-${python_exe} -m pip install --user virtualenv
 
-${python_exe} -m virtualenv PythonEnvironment -p ${python_exe}
-python_path=PythonEnvironment/bin/python
+if [ ! -f PythonEnvironment/bin/python ]
+then
+    ${python_exe} -m pip install --user --upgrade pip
+    ${python_exe} -m pip install --user virtualenv
 
-${python_path} -m pip install gcovr
+    ${python_exe} -m virtualenv PythonEnvironment -p ${python_exe}
+    python_path=PythonEnvironment/bin/python
+
+    ${python_path} -m pip install gcovr
+fi
