@@ -54,7 +54,7 @@ message("Boost libraries are ${Boost_LIBRARIES}")
 
 find_package(Python3 COMPONENTS Interpreter REQUIRED)
 
-execute_process(COMMAND ${Testing_SOURCE_DIR}/install_deps.sh ${Python3_EXECUTABLE})
+execute_process(COMMAND ${Testing_SOURCE_DIR}/install_deps.sh ${Python3_EXECUTABLE} WORKING_DIRECTORY ${Testing_SOURCE_DIR})
 
 include(CodeCoverage)
 add_custom_target(coverage_report)
