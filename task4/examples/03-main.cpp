@@ -1,12 +1,10 @@
-//
-// Created by Pavel Akhtyamov on 02.05.2020.
-//
-
 #include <Weather.h>
 #include <iostream>
 int main() {
   Weather weather;
-  weather.SetApiKey("Your api key");
+  weather.SetApiKey("Set your api key");
 
-  std::cout << weather.GetTemperature("London");
+  std::cout << weather.GetTemperature("London") << std::endl;
+  std::cout << weather.GetTomorrowTemperature("London") << std::endl;
+  std::cout << weather.GetTomorrowDiff("Moscow") << std::endl;
 }

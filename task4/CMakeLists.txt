@@ -15,7 +15,6 @@ set(Boost_USE_MULTITHREADED OFF)
 SET(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage --coverage")
 SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage --coverage")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -fprofile-arcs -ftest-coverage")
-# SET(CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} -lgcov" )
 if (APPLE)
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14") 
 endif()
@@ -66,7 +65,6 @@ function(run_coverage test_sources sources coverage_target target_name coverage_
     message(INFO sources "${sources}")
     add_executable(${test_name} ${test_sources} ${sources})
 
-#    set_target_properties(${test_name} PROPERTIES LINKER_LANGUAGE CXX)
 
     target_link_libraries(
 		${test_name} gtest_main gtest gmock Threads::Threads Boost::filesystem cpr curl
