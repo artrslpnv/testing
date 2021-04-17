@@ -34,7 +34,7 @@ int GetMonthDays(int year, int month) {
             return 28;
         }
     }
-    if (month > 12 || month < 0) {
+    if (month > 12 || month <= 0) {
         throw std::invalid_argument("Month should be in range [1-12]");
     }
     if (month == 4 || month == 6 || month == 9 || month == 11) {
