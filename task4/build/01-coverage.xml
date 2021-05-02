@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE coverage SYSTEM 'http://cobertura.sourceforge.net/xml/coverage-04.dtd'>
+<coverage line-rate="1.0" branch-rate="0.9285714285714286" lines-covered="24" lines-valid="24" branches-covered="26" branches-valid="28" complexity="0.0" timestamp="1619988010" version="gcovr 4.2">
+  <sources>
+    <source>/Users/arslepnev2000/TechProgTemplates/task4/src</source>
+  </sources>
+  <packages>
+    <package name="01-simple-library" line-rate="1.0" branch-rate="0.9285714285714286" complexity="0.0">
+      <classes>
+        <class name="Functions_cpp" filename="01-simple-library/Functions.cpp" line-rate="1.0" branch-rate="0.9285714285714286" complexity="0.0">
+          <methods/>
+          <lines>
+            <line number="4" hits="10" branch="false"/>
+            <line number="5" hits="10" branch="false"/>
+            <line number="8" hits="140" branch="false"/>
+            <line number="9" hits="140" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="10" hits="50" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="13" hits="90" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="14" hits="80" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="15" hits="70" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="16" hits="40" branch="false"/>
+            <line number="18" hits="30" branch="false"/>
+            <line number="21" hits="10" branch="false"/>
+            <line number="25" hits="10" branch="false"/>
+            <line number="26" hits="90" branch="false"/>
+            <line number="29" hits="150" branch="false"/>
+            <line number="30" hits="150" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="31" hits="20" branch="true" condition-coverage="100% (2/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="32" hits="10" branch="false"/>
+            <line number="34" hits="10" branch="false"/>
+            <line number="37" hits="130" branch="true" condition-coverage="100% (4/4)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="38" hits="20" branch="true" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="0" type="jump" coverage="50%"/>
+              </conditions>
+            </line>
+            <line number="40" hits="110" branch="true" condition-coverage="100% (8/8)">
+              <conditions>
+                <condition number="0" type="jump" coverage="100%"/>
+              </conditions>
+            </line>
+            <line number="41" hits="40" branch="false"/>
+            <line number="43" hits="70" branch="false"/>
+            <line number="44" hits="130" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
