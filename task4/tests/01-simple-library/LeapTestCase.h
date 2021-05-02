@@ -8,7 +8,7 @@
 #include <gtest/gtest.h>
 
 class LeapTestCase : public ::testing::Test {
-
+    void SetUp(){}
+    void TearDown(){}
 };
-
 

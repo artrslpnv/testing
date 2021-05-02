@@ -8,6 +8,10 @@
 #include <Weather.h>
 
 class WeatherMock : public Weather {
+public:
+WeatherMock(){
+    SetApiKey("94775420b8e5674b27495e201f0cb46b");
+}
 };
 
 

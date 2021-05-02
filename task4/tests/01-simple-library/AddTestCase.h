@@ -8,7 +8,9 @@
 #include <gtest/gtest.h>
 
 class AddTestCase: public ::testing::Test{
+public:
+    void SetUp(){}
+    void TearDown(){}
 
 };
-
 
